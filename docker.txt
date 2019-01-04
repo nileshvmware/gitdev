@@ -1,0 +1,14 @@
+FROM ubuntu:14.04
+
+RUN \
+ apt-get update && \
+ apt-get -y install apache 2
+
+ADD index.html /var/www/html/index.html
+
+EXPOSE 80
+
+CMD ["/usr/sbin/apcahe2ctl", "-D", FOREGROUND"]
+
+
+ 
